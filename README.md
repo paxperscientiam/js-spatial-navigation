@@ -203,7 +203,7 @@ Following is an example with default values.
   + Type: [Selector](#selector-1)
   + Default: `''`
 
-Elements matching `selector` are regraded as navigable elements in SpatialNavigation. However, hidden or disabled elements are ignored as they can not be focused in any way.
+Elements matching `selector` are regarded as navigable elements in SpatialNavigation. However, hidden or disabled elements are ignored as they can not be focused in any way.
 
 #### `straightOnly`
 
@@ -316,14 +316,14 @@ The type "Selector" can be any of the following types.
 * a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) or an array containing DOM elements
 * a single DOM element
 * a jQuery object
-* a string `'@<sectionId>'` to indicate the specified section
+* a string `'@<sectionId>'` to indicate the specified section (e.g. `'@test-section'` indicates the section whose id is `test-section`.
 * a string `'@'` to indicate the default section
 
 **Note:** Certain methods do not accept the `@` syntax (including both `@` and `@<sectionId>`).
 
 ### Events
 
-Following custom events are triggered by SpatialNavigation. You can bind them by `addEventListener()`.
+Following custom events are triggered by SpatialNavigation. You can bind them by `addEventListener()`. Some events are marked **"cancelable"**, which means you can cancel them by `Event.preventDefault()`, as usual.
 
 Focus-related events are also wrappers of the native `focus`/`blur` events, so they are triggered as well even SpatialNavigation is not involved. In this case, some properties in `event.detail` may be omitted. This kind of properties is marked **"Navigation Only"** below.
 
